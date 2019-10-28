@@ -27,11 +27,11 @@ In fact, this algorithm is working when the poniter passes the middlle point of 
 class Solution:
     # @return a string
     def longestPalindrome(self, s):
-        if len(s)==0:
-            return 0
+        if len(s) <= 1:
+            return s
         maxLen=1
         start=0
-        for i in xrange(len(s)):
+        for i in range(len(s)):
             if i-maxLen >=1 and s[i-maxLen-1:i+1]==s[i-maxLen-1:i+1][::-1]:
                 start=i-maxLen-1
                 maxLen+=2
