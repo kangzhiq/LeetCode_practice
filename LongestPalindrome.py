@@ -1,7 +1,8 @@
 # Longest Palindromic Substring
 
 '''
-Given a string s, find the longest palindromic substring in s. You may assume that the maximum length of s is 1000.
+Given a string s, find the longest palindromic substring in s. You may assume
+that the maximum length of s is 1000.
 Example 1:
 
 Input: "babad"
@@ -21,7 +22,9 @@ Output: "a"
 # new solution with O(n^2) time
 # Runtime 56 ms
 '''
-In fact, this algorithm is working when the poniter passes the middlle point of the exsiting Palindrome. After the middle point, when can either increase the palindrome by one char for the case of "bb" or by two chars for the case of "aba"
+In fact, this algorithm is working when the poniter passes the middlle point of
+the exsiting Palindrome. After the middle point, when can either increase the
+palindrome by one char for the case of "bb" or by two chars for the case of "aba"
 '''
 
 class Solution:
@@ -42,8 +45,9 @@ class Solution:
                 maxLen+=1
         return s[start:start+maxLen]
 
+
 # First submission:
-# Time and storage complexity is too high 
+# Time and storage complexity is too high
 # 1240 ms with 14 MB memory usage
 class Solution:
     def longestPalindrome(self, s):
@@ -65,7 +69,7 @@ class Solution:
             while start>=0 and end<=len(s)-1 and s[start]==s[end]:
                 start -= 1
                 end += 1
-            
+
             if end-start-1 > max_len:
                 max_len = end-start-1
                 max_start = start+1
